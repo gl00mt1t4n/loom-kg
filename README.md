@@ -205,7 +205,9 @@ The validator checks:
 
 ## External corpora
 
-LoomKG does not include Hikari or any other external knowledge base by default.
+LoomKG does not include [Hikari-knowledge](https://github.com/hikarioyama/Hikari-knowledge) or any other external knowledge base by default.
+
+Hikari-knowledge, by Hikari / `hikarioyama`, is a curated external AI systems knowledge graph and was part of the inspiration for keeping external corpora detached instead of mixing them into a personal vault.
 
 If you want Hikari or another reference corpus, the setup agent should add it as a detached external folder/submodule, exclude it from validation, and avoid writing personal notes inside it.
 

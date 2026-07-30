@@ -35,7 +35,7 @@ Answer the following questions one by one:
 7. What primary domains do you want? Default: `Learning`, `Work`, `Systems`, `Decisions`.
 8. Should I include the support tags `workflow`, `system`, and `research`? Default: yes.
 9. Do you want a `College` or school domain? Default: no.
-10. Do you want Hikari or another external reference corpus? Default: no.
+10. Do you want [Hikari-knowledge](https://github.com/hikarioyama/Hikari-knowledge) or another external reference corpus? Default: no.
 11. Do you use Linear or another task system for actionable work? Default: no task system; document the boundary only.
 12. Should I install/update a global agent rule to consider knowledge/task capture after useful work? Default: yes, but only after showing the exact rule and getting confirmation.
 13. If Hermes is available, should I install the LoomKG skill into Hermes runtime skills? Default: yes.
@@ -141,6 +141,8 @@ Command-line opening is not reliable for first-time vault registration; prefer t
 ## External corpora
 
 Do not include Hikari by default.
+
+Credit/reference link: [Hikari-knowledge](https://github.com/hikarioyama/Hikari-knowledge), by Hikari / `hikarioyama`.
 
 If the user wants Hikari or another reference corpus:
 
