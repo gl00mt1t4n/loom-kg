@@ -37,7 +37,7 @@ Answer the following questions one by one:
 9. Do you want a `College` or school domain? Default: no.
 10. Do you want [Hikari-knowledge](https://github.com/hikarioyama/Hikari-knowledge) or another external reference corpus? Default: no.
 11. Do you use Linear or another task system for actionable work? Default: no task system; document the boundary only.
-12. Should I install/update a global agent rule to consider knowledge/task capture after useful work? Default: yes, but only after showing the exact rule and getting confirmation.
+12. Should I install/update a global agent rule to consider knowledge/task capture after useful work? Default: yes, but only after detecting this agent's global instruction file, showing the exact destination/text, and getting confirmation.
 13. If Hermes is available, should I install the LoomKG skill into Hermes runtime skills? Default: yes.
 14. Should Obsidian be configured to show unsupported file extensions such as `.py`? Default: yes.
 15. After setup, should I create/push the private GitHub repo? Default: yes, private repo.
@@ -69,7 +69,7 @@ Use this procedure. Do not invent a different setup flow unless the user asks.
 10. Update [[Graph Architecture]] only for architecture-level choices.
 11. Keep notes minimal. Do not create personal content unless the user provides it.
 12. If an external corpus is selected, add it as detached/excluded; otherwise leave none.
-13. If the global capture rule is approved, install it into the active agent's global instruction file, not this repo's project files.
+13. If the global capture rule is approved, install it using the agent-agnostic global-instruction procedure below. It must land in the active agent's user/global instruction layer, not this repo's project files.
 14. If Hermes skill installation is approved, install/copy `Skills/personal-knowledge-graph/SKILL.md` into Hermes runtime skills.
 15. Run validation and fix failures.
 16. Ask whether the user is happy with the customized foundation.
@@ -110,7 +110,9 @@ If `gh` is unavailable, ask the user to create a private GitHub repo manually, t
 
 ## Global knowledge-capture rule
 
-This rule must go into the active agent's global instruction/memory file. Do not install it only in this repo's `AGENTS.md`, `CLAUDE.md`, or `.hermes.md`, because project-local files apply only when the agent is working inside this knowledge graph repo.
+This rule must go into the active agent's global instruction/memory file: the equivalent of Hermes `SOUL.md` for whatever agent is currently doing setup.
+
+Do not install it only in this repo's `AGENTS.md`, `CLAUDE.md`, or `.hermes.md`, because project-local files apply only when the agent is working inside this knowledge graph repo. The point is cross-project behavior: when the user is working in some unrelated codebase, the agent should still remember to ask whether durable knowledge or tasks should be captured.
 
 Ask before installing this into the user's global agent instructions:
 
@@ -120,11 +122,36 @@ Suggested destinations:
 
 - Hermes: `$HERMES_HOME/SOUL.md`.
 - Claude Code: the user's global Claude memory/instructions file, not this repo's `CLAUDE.md` shim.
-- Codex/other agents: persistent user/global instructions if available.
+- Codex/other agents: the agent's documented persistent user/global instructions file, not a project-local shim.
 
 If the active agent has no writable global instruction layer, say that clearly and ask whether to proceed with project-local instructions as a weaker fallback. Do not silently use the project-local fallback.
 
 For Hermes, also install `Skills/personal-knowledge-graph/SKILL.md` into runtime skills if the user approves.
+
+### Agent-agnostic global instruction procedure
+
+Use this procedure instead of hard-coding Hermes behavior:
+
+1. Identify the active agent/runtime: Hermes, Claude Code, Codex, Cursor, OpenCode, or other.
+2. Locate that runtime's user/global instruction file from its docs, config, or existing files.
+3. If the global file path is uncertain, ask the user instead of guessing.
+4. Show the user:
+   - detected agent/runtime
+   - exact global instruction destination
+   - exact rule text to add
+   - whether a repo-local fallback would be needed
+5. Wait for approval.
+6. Append or merge the rule into the global instruction file without duplicating an existing equivalent rule.
+7. Do not place secrets, tokens, machine credentials, or project-private details in the global rule.
+8. Verify by reading back the relevant non-secret snippet from the global file.
+
+Examples of intent:
+
+- Hermes: add the rule to global `SOUL.md`.
+- Claude Code: add the rule to Claude's user/global memory or instruction file.
+- Codex/OpenCode/Cursor/other agents: add the rule to that agent's documented global instructions.
+
+If no durable global layer exists, say so and ask whether the user wants to keep only the repo-local instructions. Repo-local instructions are acceptable as a fallback, but they do not create cross-project capture behavior.
 
 ## Obsidian setup
 
