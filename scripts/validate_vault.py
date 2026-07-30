@@ -86,6 +86,12 @@ def is_template_file(rel: Path) -> bool:
     return len(rel.parts) >= 2 and rel.parts[0] == "Templates" and rel.name != "Templates.md"
 
 
+def allows_missing_frontmatter(rel: Path) -> bool:
+    # GitHub renders README frontmatter as an ugly table. Keep the public
+    # landing page clean while still validating the rest of the vault.
+    return len(rel.parts) == 1 and rel.name == "README.md"
+
+
 def is_placeholder(value: Any) -> bool:
     return isinstance(value, str) and "{{" in value and "}}" in value
 
@@ -101,6 +107,8 @@ def validate_schema(rel: Path, data: dict[str, Any] | None, allowed_domains: set
     errors: list[dict[str, Any]] = []
     rel_s = str(rel)
     if data is None:
+        if allows_missing_frontmatter(rel):
+            return []
         return [{"file": rel_s, "error": "missing_frontmatter"}]
     if is_skill_artifact(rel):
         missing = sorted({"name", "description", "platforms"} - set(data))

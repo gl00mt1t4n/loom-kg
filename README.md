@@ -1,25 +1,10 @@
----
-id: readme
-type: system
-domain: Systems
-links:
-  - [[AGENTS]]
-  - [[Root Index]]
-  - [[Graph Architecture]]
-  - [[Registries/Properties|Properties]]
-  - [[Registries/Tags|Tags]]
-  - [[Templates]]
-  - [[Skills]]
-  - [[CLAUDE]]
----
-
 <div align="center">
 
 <img src="assets/loomkg-banner.jpg" alt="LoomKG banner" width="100%" />
 
 # LoomKG
 
-**Linked Obsidian Operating Memory**
+**Linked Obsidian Operating Memory Knowledge Graph**
 
 A cloneable Obsidian + agent knowledge graph foundation.
 
