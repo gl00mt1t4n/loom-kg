@@ -1,0 +1,46 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LoomKG banner</title>
+  <desc id="desc">Linked Obsidian Operating Memory: a cloneable Obsidian and agent knowledge graph foundation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12002b"/>
+      <stop offset="0.45" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#052e2b"/>
+    </linearGradient>
+    <linearGradient id="thread" x1="112" y1="272" x2="1040" y2="92" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa"/>
+      <stop offset="0.5" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="420" rx="32" fill="url(#bg)"/>
+  <circle cx="1070" cy="75" r="170" fill="#22d3ee" opacity="0.08"/>
+  <circle cx="135" cy="335" r="190" fill="#a78bfa" opacity="0.10"/>
+  <path d="M120 278 C240 142 360 334 480 196 C600 58 714 260 836 145 C930 56 999 88 1080 120" stroke="url(#thread)" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+  <g fill="#f8fafc" filter="url(#glow)">
+    <circle cx="120" cy="278" r="13"/>
+    <circle cx="305" cy="226" r="11"/>
+    <circle cx="480" cy="196" r="14"/>
+    <circle cx="670" cy="173" r="11"/>
+    <circle cx="836" cy="145" r="14"/>
+    <circle cx="1080" cy="120" r="13"/>
+  </g>
+  <text x="92" y="138" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="76" font-weight="800" letter-spacing="-2">LoomKG</text>
+  <text x="96" y="190" fill="#c4b5fd" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="650">Linked Obsidian Operating Memory</text>
+  <text x="96" y="242" fill="#dbeafe" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="25">A cloneable Obsidian + agent knowledge graph foundation.</text>
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="20" font-weight="700">
+    <rect x="96" y="306" width="143" height="42" rx="21" fill="#312e81" stroke="#818cf8"/>
+    <text x="122" y="334" fill="#e0e7ff">Obsidian</text>
+    <rect x="257" y="306" width="104" height="42" rx="21" fill="#164e63" stroke="#22d3ee"/>
+    <text x="286" y="334" fill="#cffafe">Agents</text>
+    <rect x="379" y="306" width="103" height="42" rx="21" fill="#064e3b" stroke="#34d399"/>
+    <text x="409" y="334" fill="#d1fae5">GitHub</text>
+  </g>
+</svg>

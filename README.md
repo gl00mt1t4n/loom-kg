@@ -13,31 +13,51 @@ links:
   - [[CLAUDE]]
 ---
 
+<div align="center">
+
+![LoomKG banner](assets/loomkg-banner.svg)
+
 # LoomKG
 
-**LOOM = Linked Obsidian Operating Memory.**
+**Linked Obsidian Operating Memory**
 
-LoomKG is a cloneable Obsidian + agent knowledge graph foundation: a small starter vault that an AI agent can customize into a private, versioned, always-available personal knowledge graph.
+A cloneable **Obsidian + agent knowledge graph foundation** that turns a starter folder into your own private, versioned, agent-maintained second brain.
 
-It is designed for people who want their notes, decisions, research, and reusable context to survive across chats, projects, machines, and agents.
+[![License: MIT](https://img.shields.io/badge/License-MIT-34d399.svg)](LICENSE)
+![Markdown](https://img.shields.io/badge/notes-Markdown-8b5cf6.svg)
+![Obsidian](https://img.shields.io/badge/opens%20in-Obsidian-7c3aed.svg)
+![Agent Ready](https://img.shields.io/badge/agent-ready-06b6d4.svg)
+![GitHub First](https://img.shields.io/badge/GitHub-private%20repo-111827.svg)
+
+</div>
+
+---
+
+## Why LoomKG exists
+
+Most AI chats forget. Most note vaults drift. Most project docs stay trapped in one repo.
+
+LoomKG gives you a lightweight structure where an agent can steadily preserve reusable knowledge, decisions, sources, and context into a normal Markdown/Obsidian graph — then keep that graph backed up in your own private GitHub repo.
+
+The public `loom-kg` repo is only the starter. Your living graph becomes yours.
 
 ## What you get
 
 | Piece | Purpose |
 |---|---|
-| Obsidian-ready Markdown vault | Open the repo as a vault and browse the starter graph immediately. |
-| `AGENTS.md` setup guide | Gives Hermes, Claude Code, Codex, or another agent a deterministic setup procedure. |
-| Templates | Starter shapes for concepts, decisions, theses, systems, indexes, and tombstones. |
-| Registries | Controlled properties, types, domains, and tags so the graph stays queryable. |
-| Validator | Checks schema, wikilinks, duplicate IDs, and reachability from the root index. |
-| GitHub-first workflow | Re-homes the starter into the user's own private repo for backup and history. |
-| Global capture rule | Helps the user's agent remember to ask about notes/tasks after useful work. |
+| 🧠 Obsidian-ready vault | Open the cloned repo as a vault and browse the starter graph immediately. |
+| 🤖 Agent setup guide | `AGENTS.md` gives Hermes, Claude Code, Codex, or another agent a deterministic setup flow. |
+| 🧩 Templates | Starter shapes for concepts, decisions, theses, systems, indexes, and tombstones. |
+| 🏷️ Registries | Controlled properties, types, domains, and tags so the graph stays queryable. |
+| ✅ Validator | Checks schema, wikilinks, duplicate IDs, and reachability from the root index. |
+| 🔐 GitHub-first workflow | Re-homes the starter into the user's own private repo for backup and history. |
+| 🔁 Global capture rule | Helps the user's agent remember to ask about notes/tasks after useful work. |
 
-## Quick start
+## Five-minute start
 
 1. Install Obsidian:
    - https://obsidian.md/download
-2. Clone this repo:
+2. Clone LoomKG:
 
 ```bash
 git clone https://github.com/gl00mt1t4n/loom-kg.git
@@ -47,14 +67,14 @@ cd loom-kg
 3. Open Obsidian.
 4. Choose **Open folder as vault**.
 5. Select the cloned `loom-kg` folder.
-6. Optional but recommended: in Obsidian settings, enable showing unsupported/all file extensions so you can see files such as `scripts/validate_vault.py`.
+6. Optional but recommended: enable showing unsupported/all file extensions in Obsidian so files like `scripts/validate_vault.py` are visible.
 7. Ask your agent:
 
 ```text
 Read AGENTS.md and help initialize this LoomKG vault for me.
 ```
 
-Obsidian treats a vault as a normal folder of Markdown files. Opening the cloned folder as a vault is enough to see the starter structure.
+That is enough to see the starter structure. Obsidian vaults are just normal folders of Markdown files.
 
 ## Recommended tools
 
@@ -66,19 +86,19 @@ Obsidian treats a vault as a normal folder of Markdown files. Opening the cloned
 | GitHub CLI | https://cli.github.com | Lets the setup agent create the user's private repo and push automatically. |
 | Hermes Agent | https://hermes-agent.nousresearch.com/docs | Recommended agent runtime because it supports skills, memory, tools, and scheduled work. |
 | Claude Code | https://docs.anthropic.com/en/docs/claude-code | Works through the `CLAUDE.md` shim and `AGENTS.md`. |
-| Linear | https://linear.app | Optional task layer for actionable work; LoomKG itself stores durable knowledge. |
+| Linear | https://linear.app | Optional task layer for actionable work; LoomKG stores durable knowledge. |
 
 Hermes is recommended, not required. LoomKG is written so any competent coding agent can read `AGENTS.md` and perform the setup.
 
-## Setup behavior
+## What the agent does after setup answers
 
-The setup questions in [[AGENTS]] all include defaults. You can answer only the questions you care about; omitted answers use the defaults.
+The questions in [[AGENTS]] all include defaults. You can answer only what you care about; omitted answers use defaults.
 
 After you answer, the agent should:
 
 1. resolve defaults for unanswered questions
 2. show a compact setup checklist
-3. customize the domains, tags, root index, and selected integrations
+3. customize domains, tags, root index, and selected integrations
 4. install any approved global knowledge-capture rule into the agent's global instruction/memory layer
 5. run validation
 6. ask whether you are happy with the foundation
@@ -87,9 +107,7 @@ After you answer, the agent should:
 
 ## GitHub-first personal vaults
 
-LoomKG is designed so every person ends with their own private GitHub repo tracking their knowledge graph.
-
-The public `loom-kg` repo is only the starter. After customization, the setup agent should re-home Git so normal commits and pushes go to the user's private repo, not back to this public starter.
+Every user's living KG should track their own private GitHub repo.
 
 Default private repo name:
 
