@@ -59,22 +59,52 @@ Use this procedure. Do not invent a different setup flow unless the user asks.
 
 1. Resolve defaults for unanswered questions.
 2. Confirm the resolved setup in a compact checklist.
-3. Rename/move the local folder only if the user requested a different path/name.
-4. Rename the root index only if requested; otherwise keep `Root Index.md`.
-5. Create exactly the selected domain folders and same-name domain map notes.
-6. Remove starter domain folders/maps that the user did not select, unless the user asked to keep examples.
-7. Update [[Registries/Properties|Properties]] so approved domains match the selected domains.
-8. Update [[Registries/Tags|Tags]] so approved tags are selected domain names plus enabled support tags.
-9. Update [[Root Index]] so it links to core support files and selected domain maps only.
-10. Update [[Graph Architecture]] only for architecture-level choices.
-11. Keep notes minimal. Do not create personal content unless the user provides it.
-12. If an external corpus is selected, add it as detached/excluded; otherwise leave none.
-13. If the global capture rule is approved, install it using the agent-agnostic global-instruction procedure below. It must land in the active agent's user/global instruction layer, not this repo's project files.
-14. If Hermes skill installation is approved, install/copy `Skills/personal-knowledge-graph/SKILL.md` into Hermes runtime skills.
-15. Run validation and fix failures.
-16. Ask whether the user is happy with the customized foundation.
-17. If yes and GitHub setup is approved, create the user's private repo, re-home Git, commit, and push.
-18. Report the pushed commit concisely.
+3. Run the setup preflight below and report blockers before editing.
+4. Rename/move the local folder only if the user requested a different path/name.
+5. Rename the root index only if requested; otherwise keep `Root Index.md`.
+6. Create exactly the selected domain folders and same-name domain map notes.
+7. Remove starter domain folders/maps that the user did not select, unless the user asked to keep examples.
+8. Update [[Registries/Properties|Properties]] so approved domains match the selected domains.
+9. Update [[Registries/Tags|Tags]] so approved tags are selected domain names plus enabled support tags.
+10. Update [[Root Index]] so it links to core support files and selected domain maps only.
+11. Update [[Graph Architecture]] only for architecture-level choices.
+12. Keep notes minimal. Do not create personal content unless the user provides it.
+13. If an external corpus is selected, add it as detached/excluded; otherwise leave none.
+14. If the global capture rule is approved, install it using the agent-agnostic global-instruction procedure below. It must land in the active agent's user/global instruction layer, not this repo's project files.
+15. If Hermes skill installation is approved, install/copy `Skills/personal-knowledge-graph/SKILL.md` into Hermes runtime skills.
+16. Run validation and fix failures.
+17. Ask whether the user is happy with the customized foundation.
+18. If yes and GitHub setup is approved, create the user's private repo, re-home Git, commit, and push.
+19. Report the pushed commit concisely.
+
+## Setup preflight
+
+Before making durable setup changes, check the local tools and repo state:
+
+```bash
+python --version || python3 --version
+git --version
+git status --short
+git config user.name
+git config user.email
+```
+
+If private GitHub repo creation/push is approved, also check:
+
+```bash
+gh --version
+gh auth status
+gh api user --jq .login
+```
+
+Handle failures explicitly:
+
+- If Python is missing, validation cannot run; install Python or ask the user for their preferred install path.
+- If Git is missing, repository setup cannot continue; install Git or ask the user.
+- If `user.name` or `user.email` is missing, set repo-local Git identity before committing.
+- If `gh` is missing, ask the user to install GitHub CLI or create the private repo manually.
+- If `gh auth status` fails, ask the user to authenticate with GitHub before creating/pushing the private repo.
+- If the working tree is dirty with user edits, inspect and preserve them; do not overwrite unrelated changes.
 
 ## GitHub ownership
 
