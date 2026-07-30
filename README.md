@@ -35,6 +35,10 @@ git clone https://github.com/<owner>/loom-kg.git
 
 Obsidian treats a vault as a normal folder of Markdown files. Opening the cloned folder as a vault is enough to see this structure.
 
+The agent setup questions all include defaults, so you can answer only the questions you care about. Omitted answers use the defaults.
+
+After you answer, the agent should customize the domains/tags/root index, install any approved global agent rule into the agent's global instruction file, validate the vault, ask whether you are happy with the foundation, then create/re-home the private GitHub repo if approved.
+
 ## What this is for
 
 Use LoomKG for durable knowledge:
