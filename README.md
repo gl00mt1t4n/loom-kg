@@ -15,99 +15,123 @@ links:
 
 <div align="center">
 
-![LoomKG banner](assets/loomkg-banner.svg)
+<img src="assets/loomkg-banner.jpg" alt="LoomKG banner" width="100%" />
 
 # LoomKG
 
 **Linked Obsidian Operating Memory**
 
-A cloneable **Obsidian + agent knowledge graph foundation** that turns a starter folder into your own private, versioned, agent-maintained second brain.
+A cloneable Obsidian + agent knowledge graph foundation.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-34d399.svg)](LICENSE)
-![Markdown](https://img.shields.io/badge/notes-Markdown-8b5cf6.svg)
-![Obsidian](https://img.shields.io/badge/opens%20in-Obsidian-7c3aed.svg)
-![Agent Ready](https://img.shields.io/badge/agent-ready-06b6d4.svg)
-![GitHub First](https://img.shields.io/badge/GitHub-private%20repo-111827.svg)
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-black?style=for-the-badge&labelColor=0b0b0b&color=ffffff"></a>
+  <img alt="Markdown" src="https://img.shields.io/badge/Markdown-native-black?style=for-the-badge&labelColor=0b0b0b&color=ffffff">
+  <img alt="Obsidian" src="https://img.shields.io/badge/Obsidian-ready-black?style=for-the-badge&labelColor=0b0b0b&color=ffffff">
+  <img alt="Agent ready" src="https://img.shields.io/badge/Agent-ready-black?style=for-the-badge&labelColor=0b0b0b&color=ffffff">
+</p>
 
 </div>
 
 ---
 
-## Why LoomKG exists
+## Premise
 
-Most AI chats forget. Most note vaults drift. Most project docs stay trapped in one repo.
+AI chats forget. Note vaults drift. Project docs stay trapped in the repo where they were written.
 
-LoomKG gives you a lightweight structure where an agent can steadily preserve reusable knowledge, decisions, sources, and context into a normal Markdown/Obsidian graph — then keep that graph backed up in your own private GitHub repo.
+LoomKG is a small foundation for a different pattern: let an agent preserve durable knowledge, decisions, sources, and context into a normal Markdown/Obsidian graph, then keep that graph versioned in your own private GitHub repository.
 
-The public `loom-kg` repo is only the starter. Your living graph becomes yours.
+The public `loom-kg` repo is only the seed. The living graph becomes yours.
 
-## What you get
+## What LoomKG provides
 
-| Piece | Purpose |
-|---|---|
-| 🧠 Obsidian-ready vault | Open the cloned repo as a vault and browse the starter graph immediately. |
-| 🤖 Agent setup guide | `AGENTS.md` gives Hermes, Claude Code, Codex, or another agent a deterministic setup flow. |
-| 🧩 Templates | Starter shapes for concepts, decisions, theses, systems, indexes, and tombstones. |
-| 🏷️ Registries | Controlled properties, types, domains, and tags so the graph stays queryable. |
-| ✅ Validator | Checks schema, wikilinks, duplicate IDs, and reachability from the root index. |
-| 🔐 GitHub-first workflow | Re-homes the starter into the user's own private repo for backup and history. |
-| 🔁 Global capture rule | Helps the user's agent remember to ask about notes/tasks after useful work. |
+**A visible starter vault**  
+Open the cloned folder in Obsidian and you immediately get a root index, domain maps, registries, templates, skills, and validation script.
 
-## Five-minute start
+**A deterministic agent setup path**  
+`AGENTS.md` tells Hermes, Claude Code, Codex, or another coding agent exactly how to ask questions, apply defaults, customize the graph, validate it, and re-home Git.
 
-1. Install Obsidian:
-   - https://obsidian.md/download
-2. Clone LoomKG:
+**A controlled graph shape**  
+Properties, note types, domains, and tags are intentionally constrained so the graph remains browseable, searchable, and maintainable.
+
+**A private GitHub endpoint**  
+After setup, the agent moves `origin` to your own private repo. Commits become a durable audit trail and cloud backup for the knowledge graph.
+
+**A global capture habit**  
+The setup flow can install a short global rule into your agent's own instruction/memory layer so it remembers to ask whether useful work belongs in notes or tasks.
+
+## Start in five minutes
+
+Install Obsidian:
+
+- https://obsidian.md/download
+
+Clone LoomKG:
 
 ```bash
 git clone https://github.com/gl00mt1t4n/loom-kg.git
 cd loom-kg
 ```
 
-3. Open Obsidian.
-4. Choose **Open folder as vault**.
-5. Select the cloned `loom-kg` folder.
-6. Optional but recommended: enable showing unsupported/all file extensions in Obsidian so files like `scripts/validate_vault.py` are visible.
-7. Ask your agent:
+Open it:
+
+1. Open Obsidian.
+2. Choose **Open folder as vault**.
+3. Select the cloned `loom-kg` folder.
+4. Optional but recommended: enable showing unsupported/all file extensions so you can see files such as `scripts/validate_vault.py`.
+
+Then ask your agent:
 
 ```text
 Read AGENTS.md and help initialize this LoomKG vault for me.
 ```
 
-That is enough to see the starter structure. Obsidian vaults are just normal folders of Markdown files.
+Obsidian vaults are just folders of Markdown files. No database import is required.
 
-## Recommended tools
+## Tooling
 
-| Tool | Link | Why |
-|---|---|---|
-| Obsidian | https://obsidian.md/download | Human UI for the Markdown knowledge graph. |
-| Git | https://git-scm.com/downloads | Local version control. |
-| GitHub | https://github.com | Private cloud backup/versioning for the user's living graph. |
-| GitHub CLI | https://cli.github.com | Lets the setup agent create the user's private repo and push automatically. |
-| Hermes Agent | https://hermes-agent.nousresearch.com/docs | Recommended agent runtime because it supports skills, memory, tools, and scheduled work. |
-| Claude Code | https://docs.anthropic.com/en/docs/claude-code | Works through the `CLAUDE.md` shim and `AGENTS.md`. |
-| Linear | https://linear.app | Optional task layer for actionable work; LoomKG stores durable knowledge. |
+Required:
 
-Hermes is recommended, not required. LoomKG is written so any competent coding agent can read `AGENTS.md` and perform the setup.
+- **Obsidian** — https://obsidian.md/download
+- **Git** — https://git-scm.com/downloads
+- **GitHub account** — https://github.com
 
-## What the agent does after setup answers
+Recommended:
 
-The questions in [[AGENTS]] all include defaults. You can answer only what you care about; omitted answers use defaults.
+- **GitHub CLI** — https://cli.github.com  
+  Lets the setup agent create the private repo and push automatically.
 
-After you answer, the agent should:
+- **Hermes Agent** — https://hermes-agent.nousresearch.com/docs  
+  Recommended runtime because it supports skills, memory, tools, scheduled work, and cross-session behavior.
 
-1. resolve defaults for unanswered questions
-2. show a compact setup checklist
+Compatible:
+
+- **Claude Code** — https://docs.anthropic.com/en/docs/claude-code  
+  Uses the `CLAUDE.md` shim, which points back to `AGENTS.md`.
+
+- **Linear** — https://linear.app  
+  Optional task layer for actionable work. LoomKG stores durable knowledge, not transient status.
+
+Hermes is the preferred runtime, not a requirement. The repo is written so any capable coding agent can follow `AGENTS.md`.
+
+## What happens during setup
+
+The setup questions in [[AGENTS]] all include defaults. You can answer only what you care about.
+
+After answers, the agent should:
+
+1. resolve omitted answers from defaults
+2. show a compact checklist of the intended setup
 3. customize domains, tags, root index, and selected integrations
-4. install any approved global knowledge-capture rule into the agent's global instruction/memory layer
-5. run validation
-6. ask whether you are happy with the foundation
-7. create/re-home the private GitHub repo if approved
-8. commit and push the initialized knowledge graph
+4. install the approved knowledge-capture rule into the agent's global instruction/memory layer
+5. validate the graph
+6. ask whether the foundation is good
+7. create or connect your private GitHub repo
+8. re-home Git so future pushes go to your repo
+9. commit and push the initialized graph
 
-## GitHub-first personal vaults
+## GitHub-first ownership
 
-Every user's living KG should track their own private GitHub repo.
+Every living LoomKG should end up tied to a private repo owned by its user.
 
 Default private repo name:
 
@@ -126,55 +150,56 @@ git push -u origin main
 
 Result:
 
-- `origin` points to the user's private knowledge graph repo.
-- `template-upstream` points to the public LoomKG starter for intentional future comparison.
-- normal `git push` goes to the user's private repo.
+- `origin` points to your private knowledge graph repo.
+- `template-upstream` points to this public starter for intentional comparison.
+- normal `git push` goes to your private repo.
 
-If the user wants no connection to the starter repo, the setup agent can remove `.git` and initialize a fresh repository instead.
+If you want full detachment, the agent can remove `.git` and initialize a fresh repository instead.
 
-## What belongs in LoomKG
+## What belongs here
 
-Use LoomKG for durable knowledge:
+Good LoomKG material:
 
-- concepts and explanations
+- reusable concepts and explanations
 - source distillations
-- decisions and why they were made
-- falsifiable theses and invalidation conditions
-- system/workflow notes
+- decisions and their reasoning
+- falsifiable theses
+- systems and workflows
 - tombstones for dead ends or superseded ideas
-- cross-session context that future agents should recover
+- cross-session context future agents should recover
 
-Do not use LoomKG for:
+Keep out:
 
 - raw chat dumps
 - transient todos
-- credentials or tokens
-- private runtime config
+- secrets, API keys, OAuth tokens, passwords
+- local runtime config
 - copied sources without synthesis
 - task status that belongs in a task system
 
-## Architecture at a glance
+## Architecture
 
-| Layer | Role |
-|---|---|
-| Obsidian | Human browsing, linking, graph view, and editing. |
-| Markdown files | Durable, portable source of truth. |
-| Frontmatter | Controlled metadata for types, domains, tags, and links. |
-| Wikilinks | Explicit graph edges. |
-| Templates | Consistent note creation. |
-| Validator | Mechanical sanity checks. |
-| Agent instructions | Repeatable setup and maintenance behavior. |
-| GitHub | Private backup, history, and recovery. |
+LoomKG is deliberately simple.
+
+- **Markdown files** are the source of truth.
+- **Obsidian** is the human interface.
+- **Frontmatter** carries controlled metadata.
+- **Wikilinks** create graph edges.
+- **Templates** keep notes consistent.
+- **Registries** define valid types, domains, and tags.
+- **The validator** checks mechanical graph health.
+- **Agent instructions** make setup and maintenance repeatable.
+- **GitHub** provides private backup and history.
 
 Start with:
 
-- [[Root Index]] — root graph entrypoint.
-- [[Graph Architecture]] — compact system model and invariants.
-- [[Registries/Properties|Properties]] — approved frontmatter schema.
-- [[Registries/Tags|Tags]] — approved broad tags.
-- [[Templates]] — note templates.
-- [[Skills]] — agent skill/instruction inventory.
-- [[AGENTS]] — setup and maintenance instructions for agents.
+- [[Root Index]] — root graph entrypoint
+- [[Graph Architecture]] — compact system model and invariants
+- [[Registries/Properties|Properties]] — approved frontmatter schema
+- [[Registries/Tags|Tags]] — approved broad tags
+- [[Templates]] — note templates
+- [[Skills]] — agent skill/instruction inventory
+- [[AGENTS]] — setup and maintenance instructions for agents
 
 ## Validation
 
@@ -184,24 +209,24 @@ Run from the vault root:
 python scripts/validate_vault.py .
 ```
 
-The validator checks that:
+The validator checks:
 
-- every normal Markdown file has required frontmatter
-- type/domain/tag values match the registries
-- wikilinks resolve
-- IDs/aliases do not collide
-- every normal Markdown file is reachable from [[Root Index]]
-- external corpora are excluded from the personal graph
+- required frontmatter
+- approved type/domain/tag values
+- wikilink resolution
+- duplicate IDs/aliases
+- reachability from [[Root Index]]
+- exclusion of external corpora from the personal graph
 
 ## External corpora
 
 LoomKG does not include Hikari or any other external knowledge base by default.
 
-If the user wants Hikari or another reference corpus, the setup agent should add it as a detached external folder/submodule, exclude it from validation, and avoid writing personal notes inside it.
+If you want Hikari or another reference corpus, the setup agent should add it as a detached external folder/submodule, exclude it from validation, and avoid writing personal notes inside it.
 
 ## License
 
-LoomKG is released under the MIT License. See [`LICENSE`](LICENSE).
+MIT. See [`LICENSE`](LICENSE).
 
 ## Public starter policy
 
